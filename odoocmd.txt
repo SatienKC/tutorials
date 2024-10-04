@@ -1,0 +1,17 @@
+http://localhost:8069/
+
+python odoo-bin -d demo_db -i base --stop-after-init
+
+python odoo-bin -r odoo -w 1150191 --addons-path=addons -d new_database
+
+python odoo-bin -r odoo -w 1150191 --addons-path=addons -d new_database -u estate
+
+http://tienstation:8069/web/database/selector
+
+
+
+docker run -d -e POSTGRES_USER=odoo -e POSTGRES_PASSWORD=odoo -e POSTGRES_DB=postgres -p 5432:5432 --name db postgres:15
+
+
+python odoo-bin -d odoo -i base --stop-after-init
+
